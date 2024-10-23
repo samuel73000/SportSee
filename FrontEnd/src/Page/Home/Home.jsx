@@ -15,6 +15,7 @@ export default function Home() {
       })
       .then((data) => {
         setName(data.data.userInfos.firstName);
+        console.log(data)
       })
       .catch((error) => {
         console.error("Erreur:", error);
@@ -24,7 +25,6 @@ export default function Home() {
   if (error) {
     return <div>Erreur : {error}</div>;
   }
-
   return (
     <section>
       <div className="container-titre-home">
@@ -34,6 +34,10 @@ export default function Home() {
         <p className="texte-titre-home">
           Félicitation ! Vous avez explosé vos objectifs hier 👏
         </p>
+      </div>
+      {/* section stats */}
+      <div>
+
       </div>
     </section>
   );
