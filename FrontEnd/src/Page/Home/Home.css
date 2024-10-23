@@ -1,3 +1,4 @@
+/* Name */
 .container-titre-home {
   display: flex;
   flex-direction: column;
@@ -13,7 +14,6 @@
   font-weight: 600;
   line-height: 24px;
   text-align: left;
-
 }
 .spam-home {
   font-family: Roboto;
@@ -29,4 +29,13 @@
   font-weight: 400;
   line-height: 24px;
   text-align: left;
+}
+/* NutritionStats */
+.container-NutritionStats-home {
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+  position: absolute;
+  right: 90px;
+  top: 325px;
 }

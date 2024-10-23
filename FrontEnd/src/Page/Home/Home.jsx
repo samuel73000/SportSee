@@ -1,10 +1,18 @@
 import { useState, useEffect } from "react";
 import "./Home.css";
+import NutritionStats from "../../composant/NutritionStats/NutritionStats";
+import caloriesImg from "../../assets/calories-icon.png";
+import proteinesImg from "../../assets/protein-icon.png";
+import glucidesImg from "../../assets/carbs-icon.png";
+import lipidesImg from "../../assets/fat-icon.png";
 
 export default function Home() {
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
+  const [calories, setCalories] = useState("");
+  const [proteines, setProteines] = useState("");
+  const [glucides, setGlucides] = useState("");
+  const [lipides, setLipides] = useState("");
   const [error, setError] = useState(null);
-
   useEffect(() => {
     fetch("http://localhost:3000/user/18")
       .then((response) => {
@@ -15,13 +23,17 @@ export default function Home() {
       })
       .then((data) => {
         setName(data.data.userInfos.firstName);
-        console.log(data)
+        setCalories(data.data.keyData.calorieCount);
+        setProteines(data.data.keyData.proteinCount);
+        setGlucides(data.data.keyData.carbohydrateCount);
+        setLipides(data.data.keyData.lipidCount);
+        console.log(data);
       })
       .catch((error) => {
         console.error("Erreur:", error);
-        setError(error.message); 
+        setError(error.message);
       });
-  }, []); 
+  }, []);
   if (error) {
     return <div>Erreur : {error}</div>;
   }
@@ -36,8 +48,11 @@ export default function Home() {
         </p>
       </div>
       {/* section stats */}
-      <div>
-
+      <div className="container-NutritionStats-home">
+        <NutritionStats img={caloriesImg} stats={`${calories}kCal`} nutri="Calories" />
+        <NutritionStats img={proteinesImg} stats={`${proteines}g`} nutri="Proteines" />
+        <NutritionStats img={glucidesImg} stats={`${glucides}g`} nutri="Glucides" />
+        <NutritionStats img={lipidesImg} stats={`${lipides}g`} nutri="Lipides" />
       </div>
     </section>
   );
