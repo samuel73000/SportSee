@@ -14,7 +14,7 @@ export default function Home() {
   const [lipides, setLipides] = useState("");
   const [error, setError] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:3000/user/18")
+    fetch("http://localhost:3000/user/12")// on peut mettre 18 a la place du 12
       .then((response) => {
         if (!response.ok) {
           throw new Error("Erreur réseau lors du chargement des données");
