@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "./Home.css";
 import NutritionStats from "../../composant/NutritionStats/NutritionStats";
 import caloriesImg from "../../assets/calories-icon.png";
@@ -6,54 +5,71 @@ import proteinesImg from "../../assets/protein-icon.png";
 import glucidesImg from "../../assets/carbs-icon.png";
 import lipidesImg from "../../assets/fat-icon.png";
 
+import { fetchUserData, fetchUserActivité } from "../../Data/Api";
+
 export default function Home() {
-  const [name, setName] = useState("");
-  const [calories, setCalories] = useState("");
-  const [proteines, setProteines] = useState("");
-  const [glucides, setGlucides] = useState("");
-  const [lipides, setLipides] = useState("");
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    fetch("http://localhost:3000/user/12")// on peut mettre 18 a la place du 12
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Erreur réseau lors du chargement des données");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setName(data.data.userInfos.firstName);
-        setCalories(data.data.keyData.calorieCount);
-        setProteines(data.data.keyData.proteinCount);
-        setGlucides(data.data.keyData.carbohydrateCount);
-        setLipides(data.data.keyData.lipidCount);
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("Erreur:", error);
-        setError(error.message);
-      });
-  }, []);
-  if (error) {
-    return <div>Erreur : {error}</div>;
+  // Utilisation des hooks pour récupérer les données
+  const { data: userData, error: userError } = fetchUserData(12);
+  const { data: activitéData, error: activitéError } = fetchUserActivité(12);
+
+  // Gestion des erreurs
+  if (userError || activitéError) {
+    return <p>Erreur lors du chargement des données</p>;
   }
+
+  // Gestion du chargement
+  if (!userData || !activitéData) {
+    return <p>Chargement des données...</p>;
+  }
+
+  // Accès aux données une fois qu'elles sont chargées
+  const { firstName } = userData.data.userInfos;
+  const { calorieCount, proteinCount, carbohydrateCount, lipidCount } = userData.data.keyData;
+
+
+
+
+
+console.log(activitéData)
+console.log(userData)
+
+
+
+
   return (
     <section>
       <div className="container-titre-home">
         <h1 className="titre-home">
-          Bonjour <span className="spam-home">{name}</span>
+          Bonjour <span className="spam-home">{firstName}</span>
         </h1>
         <p className="texte-titre-home">
           Félicitation ! Vous avez explosé vos objectifs hier 👏
         </p>
       </div>
-      {/* section stats */}
+      {/* Section des stats */}
       <div className="container-NutritionStats-home">
-        <NutritionStats img={caloriesImg} stats={`${calories}kCal`} nutri="Calories" />
-        <NutritionStats img={proteinesImg} stats={`${proteines}g`} nutri="Proteines" />
-        <NutritionStats img={glucidesImg} stats={`${glucides}g`} nutri="Glucides" />
-        <NutritionStats img={lipidesImg} stats={`${lipides}g`} nutri="Lipides" />
+        <NutritionStats
+          img={caloriesImg}
+          stats={`${calorieCount}kCal`}
+          nutri="Calories"
+        />
+        <NutritionStats
+          img={proteinesImg}
+          stats={`${proteinCount}g`}
+          nutri="Proteines"
+        />
+        <NutritionStats
+          img={glucidesImg}
+          stats={`${carbohydrateCount}g`}
+          nutri="Glucides"
+        />
+        <NutritionStats
+          img={lipidesImg}
+          stats={`${lipidCount}g`}
+          nutri="Lipides"
+        />
       </div>
     </section>
   );
 }
+
