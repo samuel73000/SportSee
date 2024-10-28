@@ -1,8 +1,26 @@
 import "./Header.css";
 import logo from "../../assets/logo.png"
 import nav from '../../assets/nav.png'
-import { Link } from "react-router-dom";
+import { Link , useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+
 export default function Header() {
+  const location = useLocation();
+  useEffect(() => {
+    const link = document.querySelectorAll(".lien-header");
+
+    // Réinitialiser les décorations de texte
+    link.forEach((l) => (l.style.color = 'white'));
+
+    if (location.pathname === "/") {
+      link[0].style.color = "red";
+    } else if (location.pathname === "/Profil") {
+      link[1].style.color = "red"; 
+    }
+    
+  }, [location.pathname]); // Dépendance sur location.pathname pour mettre à jour les styles à chaque changement de chemin
+
+
   return (
     <header>
       <div className="header-top">

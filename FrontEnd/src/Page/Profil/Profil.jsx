@@ -1,19 +1,21 @@
 import "./Profil.css";
+// img
 import NutritionStats from "../../composant/NutritionStats/NutritionStats";
 import caloriesImg from "../../assets/calories-icon.png";
 import proteinesImg from "../../assets/protein-icon.png";
 import glucidesImg from "../../assets/carbs-icon.png";
 import lipidesImg from "../../assets/fat-icon.png";
-
+// api
 import useFetchData from "../../Data/Api";
+// id
+import {sharedUserID}  from "../Home/Home"
 
 export default function Profil() {
-  const userId = 12;
   // Utilisation des hooks pour récupérer les données
-  const { data: userData, error: userError } = useFetchData(" " , userId);
-  const { data: activitéData, error: activitéError } = useFetchData("/activity" , userId);
-  const {data: SessionDurationData, error : SessionDurationError }= useFetchData("/average-sessions" , userId);
-  const {data: UserPerfomanceData, error : UserPerfomanceError }= useFetchData("/performance" , userId);
+  const { data: userData, error: userError } = useFetchData(" " , sharedUserID );
+  const { data: activitéData, error: activitéError } = useFetchData("/activity" , sharedUserID );
+  const {data: SessionDurationData, error : SessionDurationError }= useFetchData("/average-sessions" , sharedUserID );
+  const {data: UserPerfomanceData, error : UserPerfomanceError }= useFetchData("/performance" , sharedUserID );
 
   // Gestion des erreurs
   if (userError || activitéError || SessionDurationError ||UserPerfomanceError) {
@@ -37,16 +39,16 @@ export default function Profil() {
 
   return (
     <section>
-      <div className='container-titre-home'>
-        <h1 className='titre-home'>
-          Bonjour <span className='spam-home'>{firstName}</span>
+      <div className='container-titre-profil'>
+        <h1 className='titre-profil'>
+          Bonjour <span className='spam-profil'>{firstName}</span>
         </h1>
-        <p className='texte-titre-home'>
+        <p className='texte-titre-profil'>
           Félicitation ! Vous avez explosé vos objectifs hier 👏
         </p>
       </div>
       {/* Section des stats */}
-      <div className='container-NutritionStats-home'>
+      <div className='container-NutritionStats-profil'>
         <NutritionStats
           img={caloriesImg}
           stats={`${calorieCount}kCal`}

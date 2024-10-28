@@ -1,5 +1,5 @@
 /* Name */
-.container-titre-home {
+.container-titre-profil {
   display: flex;
   flex-direction: column;
   width: 50vw;
@@ -8,14 +8,14 @@
   top: 10%;
   left: 10%;
 }
-.titre-home {
+.titre-profil {
   font-family: Roboto;
   font-size: 48px;
   font-weight: 600;
   line-height: 24px;
   text-align: left;
 }
-.spam-home {
+.spam-profil {
   font-family: Roboto;
   font-size: 48px;
   font-weight: 600;
@@ -23,7 +23,7 @@
   text-align: left;
   color: red;
 }
-.texte-titre-home {
+.texte-titre-profil {
   font-family: Roboto;
   font-size: 18px;
   font-weight: 400;
@@ -31,7 +31,7 @@
   text-align: left;
 }
 /* NutritionStats */
-.container-NutritionStats-home {
+.container-NutritionStats-profil {
   display: flex;
   flex-direction: column;
   gap: 39px;
