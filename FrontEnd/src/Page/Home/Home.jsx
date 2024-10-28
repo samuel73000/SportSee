@@ -27,9 +27,6 @@ export default function Home() {
   const { calorieCount, proteinCount, carbohydrateCount, lipidCount } = userData.data.keyData;
 
 
-
-
-
 console.log(activitéData)
 console.log(userData)
 
