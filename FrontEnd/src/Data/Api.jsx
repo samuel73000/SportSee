@@ -1,37 +1,15 @@
 import { useState, useEffect } from "react";
-
-// CALL API pour prendre firstName , calorieCount etc ...
-export function fetchUserData(id) {
+// Hook personnalisé pour les appels API
+export default function useFetchData(endpoint, id) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/user/${id}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Erreur réseau lors du chargement des données");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setData(data); // On stocke les données dans le state
-      })
-      .catch((error) => {
-        setError(error);
-        console.error("Erreur:", error);
-      });
-  }, [id]);
+    if (!endpoint || !id) return;
 
-  return { data, error }; // On retourne les données et l'erreur
-}
+    const url = `http://localhost:3000/user/${id}${endpoint}`;
 
-// CALL API pour Activité quotidienne 
-export function fetchUserActivité(id) {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/user/${id}/activity`)
+    fetch(url)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Erreur réseau lors du chargement des données");
@@ -45,7 +23,7 @@ export function fetchUserActivité(id) {
         console.error("Erreur:", error);
         setError(error.message);
       });
-  }, [id]);
+  }, [endpoint, id]);
 
-  return { data, error }; // On retourne les données et l'erreur
+  return { data, error };
 }
