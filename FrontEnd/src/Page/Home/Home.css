@@ -1,13 +1,19 @@
-.section-home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
-    margin-top: 50%;
+.section-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  margin-top: 50%;
 }
-.btn-home{
-    width: 100px;
-    height: 50px;
-    border-radius: 25px;
-    cursor: pointer;
+.btn-home {
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  cursor: pointer;
+  border-color: red;
+  font-size: 20px;
+}
+.btn-home:hover {
+  background-color: red;
+  border-color: black;
 }
