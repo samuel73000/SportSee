@@ -41,7 +41,8 @@ export default function RadialBarChart({ value }) {
           textAnchor='middle'
           fontSize='26'
           fill='black'
-          font-weight='700'>
+          // font-weight='700'
+          >
           {Math.round(progress * 100)}%
         </text>
         {/* Texte "de votre objectif" en dessous */}
@@ -51,7 +52,8 @@ export default function RadialBarChart({ value }) {
           textAnchor='middle'
           fontSize='16'
           fill='#74798C'
-          fontWeight='500'>
+          // font-Weight='500'
+          >
           <tspan x='60' dy='0.5rem'>
             de votre
           </tspan>{" "}

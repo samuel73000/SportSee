@@ -1,0 +1,10 @@
+.container-RadarChart {
+  width: 258px;
+  height: 263px;
+  background-color:  #282D30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px 0px #00000005;
+}

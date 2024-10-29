@@ -9,6 +9,7 @@ import useFetchData from "../../Data/Api";
 import { sharedUserID } from "../Home/Home";
 // composant
 import RadialBarChart from "../../composant/RadialBarChart/RadialBarChart";
+import RadarChartPerf from "../../composant/RadarChart/RadarChartPerf";
 
 export default function Profil() {
   const { data: userData, error: userError } = useFetchData(" ", sharedUserID);
@@ -67,8 +68,9 @@ export default function Profil() {
           nutri='Lipides'
         />
       </div>
-      <div>
-        <RadialBarChart value={userData.todayScore} />
+      <div className="container-composant-stats-Perf">
+        {/* <RadialBarChart value={userData.todayScore} /> */}
+        {/* <RadarChartPerf data={performanceData}/> */}
       </div>
     </section>
   );
