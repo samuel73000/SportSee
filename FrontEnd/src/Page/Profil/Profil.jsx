@@ -7,12 +7,21 @@ import glucidesImg from "../../assets/carbs-icon.png";
 import lipidesImg from "../../assets/fat-icon.png";
 import useFetchData from "../../Data/Api";
 import { sharedUserID } from "../Home/Home";
+// composant
+import RadialBarChart from "../../composant/RadialBarChart/RadialBarChart";
 
 export default function Profil() {
   const { data: userData, error: userError } = useFetchData(" ", sharedUserID);
-  const { data: activitéData, error: activitéError } = useFetchData("/activity", sharedUserID);
-  const { data: sessionDurationData, error: sessionDurationError } = useFetchData("/average-sessions", sharedUserID);
-  const { data: performanceData, error: performanceError } = useFetchData("/performance", sharedUserID);
+  const { data: activitéData, error: activitéError } = useFetchData(
+    "/activity",
+    sharedUserID
+  );
+  const { data: sessionDurationData, error: sessionDurationError } =
+    useFetchData("/average-sessions", sharedUserID);
+  const { data: performanceData, error: performanceError } = useFetchData(
+    "/performance",
+    sharedUserID
+  );
 
   if (userError || activitéError || sessionDurationError || performanceError) {
     return <p>Erreur lors du chargement des données</p>;
@@ -26,7 +35,6 @@ export default function Profil() {
   // console.log(sessionDurationData)
   // console.log(performanceData)
 
-
   return (
     <section>
       <div className='container-titre-profil'>
@@ -38,10 +46,29 @@ export default function Profil() {
         </p>
       </div>
       <div className='container-NutritionStats-profil'>
-        <NutritionStats img={caloriesImg} stats={`${userData.calorieCount}kCal`} nutri='Calories' />
-        <NutritionStats img={proteinesImg} stats={`${userData.proteinCount}g`} nutri='Proteines' />
-        <NutritionStats img={glucidesImg} stats={`${userData.carbohydrateCount}g`} nutri='Glucides' />
-        <NutritionStats img={lipidesImg} stats={`${userData.lipidCount}g`} nutri='Lipides' />
+        <NutritionStats
+          img={caloriesImg}
+          stats={`${userData.calorieCount}kCal`}
+          nutri='Calories'
+        />
+        <NutritionStats
+          img={proteinesImg}
+          stats={`${userData.proteinCount}g`}
+          nutri='Proteines'
+        />
+        <NutritionStats
+          img={glucidesImg}
+          stats={`${userData.carbohydrateCount}g`}
+          nutri='Glucides'
+        />
+        <NutritionStats
+          img={lipidesImg}
+          stats={`${userData.lipidCount}g`}
+          nutri='Lipides'
+        />
+      </div>
+      <div>
+        <RadialBarChart value={userData.todayScore} />
       </div>
     </section>
   );

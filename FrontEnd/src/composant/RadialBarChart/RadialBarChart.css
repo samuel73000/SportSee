@@ -1,0 +1,19 @@
+.radial-bar-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50%;
+  background-color: #fbfbfb;
+  width: 258px;
+  height: 263px;
+position: relative;  
+}
+.titre-radialBarChart{
+font-family: Roboto;
+font-size: 15px;
+font-weight: 500;
+line-height: 24px;
+position: absolute;
+top: 24px;
+left: 30px;
+}
