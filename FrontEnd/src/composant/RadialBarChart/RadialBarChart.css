@@ -6,6 +6,7 @@
   width: 258px;
   height: 263px;
 position: relative;  
+border-radius: 5px;
 }
 .titre-radialBarChart{
 font-family: Roboto;

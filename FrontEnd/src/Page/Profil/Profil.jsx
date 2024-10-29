@@ -10,6 +10,7 @@ import { sharedUserID } from "../Home/Home";
 // composant
 import RadialBarChart from "../../composant/RadialBarChart/RadialBarChart";
 import RadarChartPerf from "../../composant/RadarChart/RadarChartPerf";
+import LineChart from "../../composant/LineChart/LineChartPerf";
 
 export default function Profil() {
   const { data: userData, error: userError } = useFetchData(" ", sharedUserID);
@@ -33,7 +34,7 @@ export default function Profil() {
   }
   // console.log(userData)
   // console.log(activitéData)
-  // console.log(sessionDurationData)
+  console.log(sessionDurationData)
   // console.log(performanceData)
 
   return (
@@ -69,8 +70,9 @@ export default function Profil() {
         />
       </div>
       <div className="container-composant-stats-Perf">
-        {/* <RadialBarChart value={userData.todayScore} /> */}
-        {/* <RadarChartPerf data={performanceData}/> */}
+      <LineChart data={sessionDurationData} />
+        <RadarChartPerf data={performanceData}/>
+        <RadialBarChart value={userData.todayScore} />
       </div>
     </section>
   );

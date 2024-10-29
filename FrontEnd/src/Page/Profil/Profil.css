@@ -45,6 +45,7 @@
 .container-composant-stats-Perf{
   display: flex;
   flex-direction: row;
-  margin-top: 50%;
-  margin-left: 20%;
+  margin-top: 57%;
+  margin-left: 27%;
+  gap: 30px;
 }
