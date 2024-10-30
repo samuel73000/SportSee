@@ -12,7 +12,7 @@ import {
 export default function RadarChartPerf(props) {
   return (
     <div className='container-RadarChart'>
-      <RadarChart outerRadius={90} data={props.data} width={320} height={320}>
+      <RadarChart outerRadius={115} data={props.data} width={320} height={320}>
         <PolarGrid radialLines={false} /> {/* Supprime les lignes radiales */}
         <PolarAngleAxis 
           dataKey='kind' 
@@ -26,7 +26,7 @@ export default function RadarChartPerf(props) {
           axisLine={false} // Désactive la ligne de l'axe radial
         />
         <Radar
-          name='Your Performance'
+          name='votre performance'
           dataKey='value'
           stroke='red'
           fill='red'

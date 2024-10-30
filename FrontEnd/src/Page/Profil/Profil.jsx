@@ -34,8 +34,8 @@ export default function Profil() {
   }
   // console.log(userData)
   // console.log(activitéData)
-  console.log(sessionDurationData)
-  // console.log(performanceData)
+  // console.log(sessionDurationData)
+  console.log(performanceData)
 
   return (
     <section>

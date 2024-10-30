@@ -33,13 +33,33 @@ class DataFormatter {
     }));
   }
 
+ 
   static formatPerformanceData(data) {
-    // Formatage des données de performance
-    return data.data.data.map((item) => ({
-      value: item.value,
-      kind: data.data.kind[item.kind],
-    }));
-  }
+    // Ordre souhaité pour les labels en français
+    const kindOrder = ["endurance", "cardio", "énergie","intensité", "force", "vitesse"];
+
+    // Dictionnaire pour traduire les noms de `kind` en français
+    const kindTranslations = {
+        cardio: "cardio",
+        energy: "énergie",
+        endurance: "endurance",
+        strength: "force",
+        speed: "vitesse",
+        intensity: "intensité",
+    };
+
+    // Formatage et tri des données de performance
+    return data.data.data
+        .map((item) => ({
+            value: item.value,
+            kind: kindTranslations[data.data.kind[item.kind]], // Conversion en français
+        }))
+        .sort((a, b) => kindOrder.indexOf(a.kind) - kindOrder.indexOf(b.kind)); // Tri selon kindOrder
+}
+
+  
+
+
 }
 
 // Hook personnalisé pour les appels API
