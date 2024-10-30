@@ -1,4 +1,4 @@
-import "./RadarChartPerf.css";
+import "./RadarChartComponent.css";
 import React from "react";
 import {
   Radar,

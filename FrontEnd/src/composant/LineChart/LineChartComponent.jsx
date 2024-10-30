@@ -1,5 +1,5 @@
 // LineChartPerf.js
-import "./LineChartPerf.css";
+import "./LineChartComponent.css";
 import React from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from "recharts";
 

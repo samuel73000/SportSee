@@ -1,5 +1,5 @@
 import React from "react";
-import "./RadialBarChart.css";
+import "./RadialBarChartComponent.css";
 
 export default function RadialBarChart({ value }) {
   const radius = 50; // Rayon du cercle
@@ -41,7 +41,8 @@ export default function RadialBarChart({ value }) {
           textAnchor='middle'
           fontSize='26'
           fill='black'
-          // font-weight='700'
+          font-weight='700'
+          fontFamily='Roboto, sans-serif' 
           >
           {Math.round(progress * 100)}%
         </text>
@@ -52,7 +53,8 @@ export default function RadialBarChart({ value }) {
           textAnchor='middle'
           fontSize='16'
           fill='#74798C'
-          // font-Weight='500'
+          font-weight='500'
+          fontFamily='Roboto, sans-serif' 
           >
           <tspan x='60' dy='0.5rem'>
             de votre

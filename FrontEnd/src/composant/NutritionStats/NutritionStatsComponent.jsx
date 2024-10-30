@@ -1,4 +1,4 @@
-import "../NutritionStats/NutritionStats.css";
+import "../NutritionStats/NutritionStatsComponent.css";
 export default function NutritionStats(props) {
   return (
     <div className="container-NutritionStats">

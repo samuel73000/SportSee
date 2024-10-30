@@ -1,6 +1,6 @@
 // Profil.jsx
 import "./Profil.css";
-import NutritionStats from "../../composant/NutritionStats/NutritionStats";
+import NutritionStats from "../../composant/NutritionStats/NutritionStatsComponent";
 import caloriesImg from "../../assets/calories-icon.png";
 import proteinesImg from "../../assets/protein-icon.png";
 import glucidesImg from "../../assets/carbs-icon.png";
@@ -8,10 +8,10 @@ import lipidesImg from "../../assets/fat-icon.png";
 import useFetchData from "../../Data/Api";
 import { sharedUserID } from "../Home/Home";
 // composant
-import RadialBarChart from "../../composant/RadialBarChart/RadialBarChart";
-import RadarChartPerf from "../../composant/RadarChart/RadarChartPerf";
-import LineChart from "../../composant/LineChart/LineChartPerf";
-
+import RadialBarChart from "../../composant/RadialBarChart/RadialBarChartComponent";
+import RadarChart from "../../composant/RadarChart/RadarChartComponent";
+import LineChart from "../../composant/LineChart/LineChartComponent";
+import BarChart from "../../composant/BarChart/BarChartComponent";
 export default function Profil() {
   const { data: userData, error: userError } = useFetchData(" ", sharedUserID);
   const { data: activitéData, error: activitéError } = useFetchData(
@@ -33,9 +33,9 @@ export default function Profil() {
     return <p>Chargement des données...</p>;
   }
   // console.log(userData)
-  // console.log(activitéData)
+  console.log(activitéData);
   // console.log(sessionDurationData)
-  console.log(performanceData)
+  // console.log(performanceData)
 
   return (
     <section>
@@ -69,10 +69,11 @@ export default function Profil() {
           nutri='Lipides'
         />
       </div>
-      <div className="container-composant-stats-Perf">
-      <LineChart data={sessionDurationData} />
-        <RadarChartPerf data={performanceData}/>
-        <RadialBarChart value={userData.todayScore} />
+      <div className='container-composant-stats-Perf'>
+        <BarChart data={activitéData} />
+        {/* <LineChart data={sessionDurationData} />
+        <RadarChart data={performanceData} />
+        <RadialBarChart value={userData.todayScore} /> */}
       </div>
     </section>
   );
