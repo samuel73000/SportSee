@@ -1,37 +1,48 @@
-.custom-tooltip{
-    background-color: red;
-    color: white;
-    text-align: center;
-    padding: 5px;
-    font-family: Roboto;
-    font-size: 10px;
-    font-weight: 500;
+.bar-chart-container {
+  width: 835px;
+  height: 320px;
+  border-radius: 5px;
+  background: #fbfbfb;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 32px 0px 32px;
 }
 
+.custom-tooltip {
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: 500;
+}
 
-.container-title-barChart{
-    display: flex;
-    flex-direction: row;
+.container-title-barChart {
+  display: flex;
+  flex-direction: row;
 }
-.title-barChart{
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 24px;
-    text-align: left;
-    color: #20253A;
-    margin-right: 30%;
+.title-barChart {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #20253a;
+  margin-right: 58%;
+  margin-left: 2%;
 }
-  .legend-item {
-    display: flex; 
-    align-items: center; 
-    flex-direction: row;
-    margin-left: 10px; 
-  }
-  
-  .legend-color {
-    width: 15px; 
-    height: 15px; 
-    margin-right: 5px; 
-    border-radius: 25px;
-  }
+.legend-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 10px;
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  border-radius: 25px;
+}
