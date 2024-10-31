@@ -32,8 +32,8 @@ export default function Profil() {
   if (!userData || !activitéData || !sessionDurationData || !performanceData) {
     return <p>Chargement des données...</p>;
   }
-  // console.log(userData)
-  console.log(activitéData);
+  console.log(userData)
+  // console.log(activitéData);
   // console.log(sessionDurationData)
   // console.log(performanceData)
 

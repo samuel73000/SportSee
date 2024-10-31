@@ -5,14 +5,14 @@ import { useState, useEffect } from "react";
 class DataFormatter {
   static formatUserData(data) {
     return {
-      firstName: data.data.userInfos.firstName,
-     age: data.data.userInfos.age,
-    lastName: data.data.userInfos.lastName,
-      calorieCount: data.data.keyData.calorieCount,
-      proteinCount: data.data.keyData.proteinCount,
-      carbohydrateCount: data.data.keyData.carbohydrateCount,
-      lipidCount: data.data.keyData.lipidCount,
-      todayScore: data.data.todayScore || data.data.score, // Utilise `todayScore` si elle existe, sinon `score`
+      firstName: data?.data?.userInfos?.firstName,
+      age: data?.data?.userInfos?.age,
+      lastName: data?.data?.userInfos?.lastName,
+      calorieCount: data?.data?.keyData?.calorieCount,
+      proteinCount: data?.data?.keyData?.proteinCount,
+      carbohydrateCount: data?.data?.keyData?.carbohydrateCount,
+      lipidCount: data?.data?.keyData?.lipidCount,
+      todayScore: data?.data?.todayScore || data?.data?.score, // Utilise `todayScore` si elle existe, sinon `score`
     };
   }
 
@@ -33,33 +33,35 @@ class DataFormatter {
     }));
   }
 
- 
   static formatPerformanceData(data) {
     // Ordre souhaité pour les labels en français
-    const kindOrder = ["endurance", "cardio", "énergie","intensité", "force", "vitesse"];
+    const kindOrder = [
+      "endurance",
+      "cardio",
+      "énergie",
+      "intensité",
+      "force",
+      "vitesse",
+    ];
 
     // Dictionnaire pour traduire les noms de `kind` en français
     const kindTranslations = {
-        cardio: "cardio",
-        energy: "énergie",
-        endurance: "endurance",
-        strength: "force",
-        speed: "vitesse",
-        intensity: "intensité",
+      cardio: "cardio",
+      energy: "énergie",
+      endurance: "endurance",
+      strength: "force",
+      speed: "vitesse",
+      intensity: "intensité",
     };
 
     // Formatage et tri des données de performance
     return data.data.data
-        .map((item) => ({
-            value: item.value,
-            kind: kindTranslations[data.data.kind[item.kind]], // Conversion en français
-        }))
-        .sort((a, b) => kindOrder.indexOf(a.kind) - kindOrder.indexOf(b.kind)); // Tri selon kindOrder
-}
-
-  
-
-
+      .map((item) => ({
+        value: item.value,
+        kind: kindTranslations[data.data.kind[item.kind]], // Conversion en français
+      }))
+      .sort((a, b) => kindOrder.indexOf(a.kind) - kindOrder.indexOf(b.kind)); // Tri selon kindOrder
+  }
 }
 
 // Hook personnalisé pour les appels API
@@ -70,6 +72,7 @@ export default function useFetchData(endpoint, id) {
   useEffect(() => {
     if (!endpoint || !id) return;
 
+    //  console.log(process.env.VITE_API_URL_API_URL)
     const url = `http://localhost:3000/user/${id}${endpoint}`;
 
     fetch(url)
