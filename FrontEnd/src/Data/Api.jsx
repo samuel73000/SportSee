@@ -1,4 +1,4 @@
-// api.jsx
+
 import { useState, useEffect } from "react";
 
 // Classe de modélisation pour formater les données
