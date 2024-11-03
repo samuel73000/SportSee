@@ -1,5 +1,5 @@
 @media screen and (min-width: 1024px) and (min-height: 780px) {
-  /* Styles spécifiques pour les résolutions supérieures à 1024x780 */
+  /* Style spécifiques pour les résolutions supérieures à 1024x780 */
   body {
     width: 100%;
     max-width: 1200px; 
