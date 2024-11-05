@@ -72,8 +72,7 @@ export default function useFetchData(endpoint, id) {
   useEffect(() => {
     if (!endpoint || !id) return;
 
-    //  console.log(process.env.VITE_API_URL_API_URL)
-    const url = `http://localhost:3000/user/${id}${endpoint}`;
+    const url = `${import.meta.env.VITE_API_URL}/user/${id}${endpoint}`;
 
     fetch(url)
       .then((response) => {
