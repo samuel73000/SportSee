@@ -1,5 +1,6 @@
 import React from "react";
 import "./RadialBarChartComponent.css";
+import  ResponsiveContainer from 'recharts';
 
 export default function RadialBarChart({ value }) {
   const radius = 50; // Rayon du cercle
@@ -10,8 +11,11 @@ export default function RadialBarChart({ value }) {
   return (
     <div className='radial-bar-chart'>
       <p className='titre-radialBarChart'>Score</p>
-      <svg width='199' height='199' viewBox='0 0 120 120'>
+      <ResponsiveContainer width="100%" height="100%">
+
+      <svg viewBox='0 0 120 120'>
         {/* Cercle de fond */}
+      
         <circle
           cx='60'
           cy='60'
@@ -66,6 +70,7 @@ export default function RadialBarChart({ value }) {
           {/* Deuxième ligne, ajusté pour un espacement adéquat */}
         </text>
       </svg>
+      </ResponsiveContainer>
     </div>
   );
 }

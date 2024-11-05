@@ -1,6 +1,6 @@
 .line-chart-container {
-  width: 258px;
-  height: 263px;
+  width: 30%;
+  height: 283px;
   border-radius: 5px;
   background-color: red;
   display: flex;
@@ -32,7 +32,7 @@ top: 5px;
 }
 .rectangle-LineChart{
   background-color: black;
-  height: 263px;
+  height: 283px;
   width: 79px;
   position: absolute;
   right: 0;
@@ -40,4 +40,12 @@ top: 5px;
 }
 .container-graphique-line-chart{
   margin-top: 40px;
+  height: 263px; 
+  width: 90%;
+  padding-right: 20px; 
+
+}
+.clip-container {
+  clip-path: inset(0px -20px); /* Ajuste cette valeur comme nécessaire */
+  background-color: blue; /* Pour vérifier la visibilité */
 }

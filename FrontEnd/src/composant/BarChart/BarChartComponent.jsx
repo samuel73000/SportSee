@@ -1,7 +1,7 @@
 // BarChartComponent.js
 import "./BarChartComponent.css";
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid ,ResponsiveContainer  } from "recharts";
 
 export default function BarChartComponent(props) {
   const formatDate = (dateString) => {
@@ -39,11 +39,10 @@ export default function BarChartComponent(props) {
           <span>Calories</span>
         </span>
       </div>
+      <ResponsiveContainer width="100%" height="100%">
       <BarChart
-        width={850}
-        height={250}
         data={props.data}
-        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+        margin={{ top: 20, right: 40, left: 53, bottom: 5 }}>
         <CartesianGrid
           vertical={false}
           horizontal={true}
@@ -55,6 +54,8 @@ export default function BarChartComponent(props) {
         <Bar dataKey='kilogram' fill='#282D30' />
         <Bar dataKey='calories' fill='#E60000' />
       </BarChart>
+      </ResponsiveContainer>
+
     </div>
   );
 }

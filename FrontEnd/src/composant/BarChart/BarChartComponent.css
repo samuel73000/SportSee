@@ -1,12 +1,12 @@
 .bar-chart-container {
-  width: 835px;
+  width: 100%;
   height: 320px;
   border-radius: 5px;
   background: #fbfbfb;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0px 32px 0px 32px;
+  /* padding: 0px 32px 0px 32px; */
 }
 
 .custom-tooltip {
@@ -22,6 +22,7 @@
 .container-title-barChart {
   display: flex;
   flex-direction: row;
+  margin-left: 32px;
 }
 .title-barChart {
   font-family: Roboto;

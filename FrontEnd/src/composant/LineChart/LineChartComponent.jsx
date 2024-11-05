@@ -1,7 +1,7 @@
 // LineChartPerf.js
 import "./LineChartComponent.css";
 import React from "react";
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend ,  ResponsiveContainer} from "recharts";
 
 export default function LineChartPerf(props) {
   // Composant pour le tooltip personnalisé
@@ -31,16 +31,18 @@ export default function LineChartPerf(props) {
       <p className='titre-LineChart'>Durée moyenne des sessions</p>
       <div className='rectangle-LineChart'></div>
       <div className="container-graphique-line-chart">
+      <ResponsiveContainer width="100%" height="100%">
+
       <LineChart
-        width={280}
-        height={190}
         data={data}
-        margin={{ top: 5, right: 13, left: 13, bottom: -10 }}>
+        margin={{ top: 5, right: 30, left: 10, bottom: -10 }}>
         <XAxis
           dataKey='day'
           tickLine={false}
           axisLine={false}
           tick={{ fill: '#FFFFFF', fontSize: 12, dx:20 }}
+          interval="preserveEnd"
+          minTickGap={0}
         />
         <YAxis hide={true} />
         <Tooltip content={<CustomTooltip />} />
@@ -50,17 +52,14 @@ export default function LineChartPerf(props) {
           activeDot={{ r: 8 }}
           dot={false}
           stroke='#FFFFFF'
+          className="line-extension" 
         />
       </LineChart>
+      </ResponsiveContainer>
       </div>
     </div>
   );
 }
-
-
-
-
-
 
 
 

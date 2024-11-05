@@ -1,6 +1,6 @@
 .container-RadarChart {
-  width: 258px;
-  height: 263px;
+  width: 30%;
+  height: 283px; /* Ajuste selon tes besoins */
   background-color:  #282D30;
   display: flex;
   justify-content: center;
