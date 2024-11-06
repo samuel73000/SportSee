@@ -32,11 +32,11 @@
 }
 
 /* container barChart */
-.container-BarChart-Profil{
-position: absolute;
-right:400px ;
-top: 325px;
-width: 70%;
+.container-BarChart-Profil {
+  position: absolute;
+  right: 400px;
+  top: 325px;
+  width: 62%;
 }
 
 /* NutritionStats */
@@ -49,14 +49,13 @@ width: 70%;
   top: 325px;
 }
 
-
 /* container-composant-stats-Perf */
-.container-composant-stats-Perf{
+.container-composant-stats-Perf {
   display: flex;
   flex-direction: row;
-position: absolute;
-bottom: 290px;
-right: 400px;
-  gap: 62px;
-  width: 70%;
+  position: absolute;
+  bottom: 290px;
+  right: 400px;
+  gap: 5%;
+  width: 62%;
 }
