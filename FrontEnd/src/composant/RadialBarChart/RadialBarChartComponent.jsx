@@ -1,6 +1,6 @@
 import React from "react";
 import "./RadialBarChartComponent.css";
-import  ResponsiveContainer from 'recharts';
+import  {ResponsiveContainer} from 'recharts';
 
 export default function RadialBarChart({ value }) {
   const radius = 50; // Rayon du cercle
