@@ -45,7 +45,6 @@ export default function RadialBarChart({ value }) {
           textAnchor='middle'
           fontSize='26'
           fill='black'
-          font-weight='700'
           fontFamily='Roboto, sans-serif' 
           >
           {Math.round(progress * 100)}%
@@ -57,7 +56,6 @@ export default function RadialBarChart({ value }) {
           textAnchor='middle'
           fontSize='16'
           fill='#74798C'
-          font-weight='500'
           fontFamily='Roboto, sans-serif' 
           >
           <tspan x='60' dy='0.5rem'>
