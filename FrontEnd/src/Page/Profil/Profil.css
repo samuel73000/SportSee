@@ -2,11 +2,10 @@
 .container-titre-profil {
   display: flex;
   flex-direction: column;
-  width: 50vw;
-  padding-left: 117px;
+  width: 62%;
   position: absolute;
   top: 10%;
-  left: 10%;
+  right: 400px;
 }
 .titre-profil {
   font-family: Roboto;
