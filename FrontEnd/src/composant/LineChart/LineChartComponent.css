@@ -1,13 +1,14 @@
 .line-chart-container {
   width: 30%;
-  height: 283px;
+  height: 267px;
+  padding-bottom: 16px;
   border-radius: 5px;
   background-color: red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Cache les débordements */
+  overflow: hidden;
   position: relative;
   z-index: 0;
 }
@@ -17,20 +18,20 @@
   font-weight: 500;
   line-height: 24px;
   text-align: left;
-color: white;
-text-align: left;
-width: 50%;
-position: absolute;
-left:34px;
-top: 5px;
+  color: white;
+  text-align: left;
+  width: 50%;
+  position: absolute;
+  left: 34px;
+  top: 5px;
 }
-.text-ToolTip{
+.text-ToolTip {
   background-color: white;
   color: black;
   padding: 5px;
   border-radius: 3px;
 }
-.rectangle-LineChart{
+.rectangle-LineChart {
   background-color: black;
   height: 283px;
   width: 79px;
@@ -38,14 +39,8 @@ top: 5px;
   right: 0;
   opacity: 0.1;
 }
-.container-graphique-line-chart{
+.container-graphique-line-chart {
   margin-top: 40px;
-  height: 263px; 
-  width: 90%;
-  padding-right: 20px; 
-
-}
-.clip-container {
-  clip-path: inset(0px -20px); /* Ajuste cette valeur comme nécessaire */
-  background-color: blue; /* Pour vérifier la visibilité */
+  height: 263px;
+  width: 100%;
 }

@@ -35,16 +35,17 @@ export default function LineChartPerf(props) {
 
       <LineChart
         data={data}
-        margin={{ top: 5, right: 30, left: 10, bottom: -10 }}>
+        margin={{ top: 5, right: 15, left: 30, bottom: -10 }}>
         <XAxis
           dataKey='day'
           tickLine={false}
           axisLine={false}
-          tick={{ fill: '#FFFFFF', fontSize: 12, dx:20 }}
-          interval="preserveEnd"
+          tick={{ fill: '#FFFFFF', fontSize: 12, dx:-10 }}
+          interval={0}
           minTickGap={0}
+          
         />
-        <YAxis hide={true} />
+        {/* <YAxis hide={false} /> */}
         <Tooltip content={<CustomTooltip />} />
         <Line
           type='monotone'
