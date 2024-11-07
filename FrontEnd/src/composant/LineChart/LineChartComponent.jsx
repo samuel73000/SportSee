@@ -35,18 +35,24 @@ export default function LineChartPerf(props) {
 
       <LineChart
         data={data}
-        margin={{ top: 5, right: 15, left: 30, bottom: -10 }}>
+        margin={{ top: 5, right: 0, left: 0, bottom: 0 }}
+        >
         <XAxis
           dataKey='day'
+          padding={{ left: 10, right: 10 }}
           tickLine={false}
           axisLine={false}
           tick={{ fill: '#FFFFFF', fontSize: 12, dx:-10 }}
-          interval={0}
           minTickGap={0}
-          
+          interval="preserveStartEnd"
+          tickMargin={10}
+          fillOpacity={0.5}
+          style={{
+            transform: "scale(0.9)",
+            transformOrigin: "bottom",
+          }}
         />
         <YAxis domain={[0, 'dataMax + 20']} hide={true} />
-        {/* <YAxis hide={false} /> */}
         <Tooltip content={<CustomTooltip />} />
         <Line
           type='monotone'
@@ -54,8 +60,6 @@ export default function LineChartPerf(props) {
           activeDot={{ r: 8 }}
           dot={false}
           stroke='#FFFFFF'
-          className="line-extension" 
-          
         />
       </LineChart>
       </ResponsiveContainer>

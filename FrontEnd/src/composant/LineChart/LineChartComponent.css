@@ -1,7 +1,6 @@
 .line-chart-container {
   width: 30%;
-  height: 267px;
-  padding-bottom: 16px;
+  height: 283px;
   border-radius: 5px;
   background-color: red;
   display: flex;
@@ -24,6 +23,7 @@
   position: absolute;
   left: 34px;
   top: 5px;
+  opacity: 0.5;
 }
 .text-ToolTip {
   background-color: white;
@@ -42,7 +42,4 @@
 .container-graphique-line-chart {
   height: 263px;
   width: 100%;
-}
-.line-extension{
-  margin: 100;
 }
