@@ -45,6 +45,7 @@ export default function LineChartPerf(props) {
           minTickGap={0}
           
         />
+        <YAxis domain={[0, 'dataMax + 20']} hide={true} />
         {/* <YAxis hide={false} /> */}
         <Tooltip content={<CustomTooltip />} />
         <Line
@@ -54,6 +55,7 @@ export default function LineChartPerf(props) {
           dot={false}
           stroke='#FFFFFF'
           className="line-extension" 
+          
         />
       </LineChart>
       </ResponsiveContainer>
