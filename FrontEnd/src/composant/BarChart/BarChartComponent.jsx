@@ -1,7 +1,15 @@
 // BarChartComponent.js
 import "./BarChartComponent.css";
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid ,ResponsiveContainer  } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+  ResponsiveContainer,
+} from "recharts";
 
 export default function BarChartComponent(props) {
   const formatDate = (dateString) => {
@@ -39,23 +47,25 @@ export default function BarChartComponent(props) {
           <span>Calories</span>
         </span>
       </div>
-      <ResponsiveContainer width="100%" height="100%">
-      <BarChart
-        data={props.data}
-        margin={{ top: 20, right: 40, left: 53, bottom: 5 }}>
-        <CartesianGrid
-          vertical={false}
-          horizontal={true}
-          strokeDasharray='3 3'
-        />
-        <XAxis dataKey='day' tickFormatter={formatDate} tickLine={false} />
-        <YAxis orientation='right' tickLine={false} axisLine={false} />
-        <Tooltip content={<CustomTooltip />} />
-        <Bar dataKey='kilogram' fill='#282D30' />
-        <Bar dataKey='calories' fill='#E60000' />
-      </BarChart>
+      <ResponsiveContainer width='100%' height='100%'>
+        <BarChart
+          data={props.data}
+          margin={{ top: 20, right: 40, left: 53, bottom: 5 }}
+          barSize={7} // Réduction supplémentaire de la taille des barres
+          barGap={7}  // Ajout d'un écart entre les barres individuelles
+          >
+          <CartesianGrid
+            vertical={false}
+            horizontal={true}
+            strokeDasharray='3 3'
+          />
+          <XAxis dataKey='day' tickFormatter={formatDate} tickLine={false} />
+          <YAxis orientation='right' tickLine={false} axisLine={false} />
+          <Tooltip content={<CustomTooltip />} />
+          <Bar dataKey='kilogram' fill='#282D30' radius={[30, 30, 0, 0]}  />
+          <Bar dataKey='calories' fill='#E60000' radius={[30, 30, 0, 0]} />
+        </BarChart>
       </ResponsiveContainer>
-
     </div>
   );
 }
