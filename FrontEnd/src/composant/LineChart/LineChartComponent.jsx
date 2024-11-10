@@ -9,8 +9,9 @@ export default function LineChartPerf(props) {
     if (active && payload && payload.length) {
       return (
         <div className='custom-tooltip'>
+          <div className='rectangle-LineChart'>  </div> 
           <p className='text-ToolTip'>{`${payload[0].value} min`}</p>{" "}
-          {/* Modifie ceci selon tes données */}
+
         </div>
       );
     }
@@ -29,7 +30,7 @@ export default function LineChartPerf(props) {
   return (
     <div className='line-chart-container'>
       <p className='titre-LineChart'>Durée moyenne des sessions</p>
-      <div className='rectangle-LineChart'></div>
+      {/* <div className='rectangle-LineChart'></div> */}
       <div className="container-graphique-line-chart">
       <ResponsiveContainer width="100%" height="100%">
 
