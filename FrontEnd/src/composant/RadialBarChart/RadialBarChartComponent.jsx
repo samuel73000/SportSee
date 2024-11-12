@@ -43,7 +43,7 @@ export default function RadialBarChart({ value }) {
           x='60'
           y='55'
           textAnchor='middle'
-          fontSize='26'
+          fontSize='22'
           fill='black'
           fontFamily='Roboto, sans-serif' 
           >
@@ -54,7 +54,7 @@ export default function RadialBarChart({ value }) {
           x='60'
           y='70'
           textAnchor='middle'
-          fontSize='16'
+          fontSize='13'
           fill='#74798C'
           fontFamily='Roboto, sans-serif' 
           >

@@ -36,11 +36,6 @@ export default function LineChartPerf(props) {
     return null;
   };
 
-
-
-
-
-
   // Mapping des jours numériques vers leurs initiales
   const dayLabels = ["L", "M", "M", "J", "V", "S", "D"];
 

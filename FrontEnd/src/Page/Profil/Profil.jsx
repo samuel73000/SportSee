@@ -47,6 +47,7 @@ export default function Profil() {
           Félicitation ! Vous avez explosé vos objectifs hier 👏
         </p>
       </div>
+      <div className="container-barchart-nutrition">
       <div className="container-BarChart-Profil">
       <BarChart data={activitéData} />
       </div>
@@ -71,6 +72,7 @@ export default function Profil() {
           stats={`${userData.lipidCount}g`}
           nutri='Lipides'
         />
+      </div>
       </div>
       <div className='container-composant-stats-Perf'>
        <LineChart data={sessionDurationData} />
