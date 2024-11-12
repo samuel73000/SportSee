@@ -7,7 +7,6 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
@@ -21,9 +20,9 @@ export default function LineChartPerf(props) {
       // Appliquer un décalage différent si le point est à droite du graphique.
       let tooltipPosition = {};
       if (x < 50) {
-        tooltipPosition = { transform: "translateX(-31%)" }; // Côté gauche
-      } else if (x > 300) {
-        tooltipPosition = { transform: "translateX(31%)" }; // Côté droit
+        tooltipPosition = { transform: "translateX(-41%)" }; // Côté gauche
+      } else if (x > 290) {
+        tooltipPosition = { transform: "translateX(41%)" }; // Côté droit
       } else {
         tooltipPosition = { transform: "translateX(-60%)" }; // Centre
       }
@@ -36,6 +35,11 @@ export default function LineChartPerf(props) {
     }
     return null;
   };
+
+
+
+
+
 
   // Mapping des jours numériques vers leurs initiales
   const dayLabels = ["L", "M", "M", "J", "V", "S", "D"];
