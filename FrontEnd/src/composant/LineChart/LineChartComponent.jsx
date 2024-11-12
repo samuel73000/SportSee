@@ -13,13 +13,25 @@ import {
 
 export default function LineChartPerf(props) {
   // Composant pour le tooltip personnalisé
-  const CustomTooltip = ({ active, payload }) => {
+  const CustomTooltip = ({ active, payload, coordinate }) => {
     if (active && payload && payload.length) {
+      const { x } = coordinate;
+
+      // Logique pour ajuster la position :
+      // Appliquer un décalage différent si le point est à droite du graphique.
+      let tooltipPosition = {};
+      if (x < 50) {
+        tooltipPosition = { transform: "translateX(-31%)" }; // Côté gauche
+      } else if (x > 300) {
+        tooltipPosition = { transform: "translateX(31%)" }; // Côté droit
+      } else {
+        tooltipPosition = { transform: "translateX(-60%)" }; // Centre
+      }
+
       return (
-        <div className='custom-tooltip-lineChart'>
-          <p className='text-ToolTip'>{`${payload[0].value} min`}</p>{" "}
+        <div className='custom-tooltip-lineChart' style={tooltipPosition}>
+          <p className='text-ToolTip'>{`${payload[0].value} min`}</p>
         </div>
-        
       );
     }
     return null;
@@ -41,7 +53,7 @@ export default function LineChartPerf(props) {
         <ResponsiveContainer width='100%' height='100%'>
           <LineChart
             data={data}
-            margin={{ top: 5, right: 0, left: 0, bottom: 0 }}>
+            margin={{ top: 5, right: 0, left: 0, bottom: 10 }}>
             <XAxis
               dataKey='day'
               padding={{ left: 10, right: 10 }}
