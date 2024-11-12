@@ -12,8 +12,6 @@
 .logo-header {
   width: 178px;
   height: 60.93px;
-  top: 18px;
-  left: 28px;
   gap: 0px;
   opacity: 0px;
   margin-left: -7%;
@@ -56,4 +54,15 @@
   rotate: 270deg;
   position: absolute;
   bottom: 9%;
+}
+@media screen and (max-width: 1025px)  {
+  .logo-header {
+    width: 158px;
+    height: 50.93px;
+    top: 18px;
+    left: 38px;
+    gap: 0px;
+    opacity: 0px;
+    margin-left: -5%;
+  }
 }
