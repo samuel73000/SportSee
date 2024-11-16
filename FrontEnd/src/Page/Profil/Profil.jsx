@@ -38,7 +38,12 @@ export default function Profil() {
   // console.log(performanceData);
 
   return (
-    <section>
+    <section className="section-page-profil">
+      <div className="container-allconposant-Profil">
+
+     <div className="container-allCompoantSaufNutri">
+
+     
       <div className='container-titre-profil'>
         <h1 className='titre-profil'>
           Bonjour <span className='spam-profil'>{userData.firstName}</span>
@@ -47,10 +52,16 @@ export default function Profil() {
           Félicitation ! Vous avez explosé vos objectifs hier 👏
         </p>
       </div>
-      <div className="container-barchart-nutrition">
       <div className="container-BarChart-Profil">
       <BarChart data={activitéData} />
       </div>
+      <div className='container-composant-stats-Perf'>
+       <LineChart data={sessionDurationData} />
+        <RadarChart data={performanceData} />
+        <RadialBarChart value={userData.todayScore} /> 
+      </div>
+      </div>
+
       <div className='container-NutritionStats-profil'>
         <NutritionStats
           img={caloriesImg}
@@ -73,11 +84,6 @@ export default function Profil() {
           nutri='Lipides'
         />
       </div>
-      </div>
-      <div className='container-composant-stats-Perf'>
-       <LineChart data={sessionDurationData} />
-        <RadarChart data={performanceData} />
-        <RadialBarChart value={userData.todayScore} /> 
       </div>
     </section>
   );

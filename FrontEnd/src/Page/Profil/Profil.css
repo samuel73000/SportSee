@@ -1,11 +1,23 @@
+.section-page-profil{
+  margin-top: 5%;
+  margin-left: 11%;
+}
+.container-allconposant-Profil{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 5%;
+}
+.container-allCompoantSaufNutri{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 /* Name */
 .container-titre-profil {
   display: flex;
   flex-direction: column;
-  width: 62%;
-  position: absolute;
-  top: 10%;
-  left: 17%;
+  width: 100%;
 }
 .titre-profil {
   font-family: Roboto;
@@ -31,34 +43,63 @@
 }
 
 
+
+
+
+
+
 /* container barChart */
 .container-BarChart-Profil {
-  position: absolute;
-  left: 17%;
-  top: 325px;
-  width: 62%;
-}
-
-/* NutritionStats */
-.container-NutritionStats-profil {
-  display: flex;
-  flex-direction: column;
-  gap: 68px;
-  position: absolute;
-  left: 83%;
-  top: 325px;
+  width: 100%;
+  margin-top: 5%;
 }
 
 /* container-composant-stats-Perf */
 .container-composant-stats-Perf {
   display: flex;
   flex-direction: row;
-  position: absolute;
-  bottom: 200px;
-  left: 17%;
   gap: 5%;
-  width: 62%;
+  width: 100%;
+  margin-top: 3%;
 }
+/* NutritionStats */
+.container-NutritionStats-profil {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-right: 5%;
+  margin-top: 13.2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -66,41 +107,7 @@
 
 
 @media screen and (max-width: 1025px)  {
-/* container barChart et NutritionStats  */
-.container-barchart-nutrition{
-  display: flex;
-  flex-direction: column;
- }
- 
-/* container barChart */
-.container-BarChart-Profil {
-  position: relative;
-  left: 17%;
-  top: 325px;
-  width: 80%;
-}
 
-/* NutritionStats */
-.container-NutritionStats-profil {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  width: 80%;
-  position: relative;
-  left: 17%;
-  top: 350px;
-}
-
-/* container-composant-stats-Perf */
-.container-composant-stats-Perf {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  bottom: 50px;
-  left: 17%;
-  gap: 5%;
-  width: 80%;
-}
 
 
 
