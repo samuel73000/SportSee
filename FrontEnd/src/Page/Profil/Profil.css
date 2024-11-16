@@ -1,6 +1,6 @@
 .section-page-profil{
-  margin-top: 5%;
-  margin-left: 11%;
+  margin-top: 9vh;
+  margin-left: 11vw;
 }
 .container-allconposant-Profil{
   display: flex;
@@ -44,14 +44,10 @@
 
 
 
-
-
-
-
 /* container barChart */
 .container-BarChart-Profil {
   width: 100%;
-  margin-top: 5%;
+  margin-top: 5vh;
 }
 
 /* container-composant-stats-Perf */
@@ -60,15 +56,15 @@
   flex-direction: row;
   gap: 5%;
   width: 100%;
-  margin-top: 3%;
+  margin-top: 3vh;
 }
 /* NutritionStats */
 .container-NutritionStats-profil {
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  margin-right: 5%;
-  margin-top: 13.2%;
+  gap: 47px;
+  margin-right: 3vw;
+  margin-top: 18.8vh;
 }
 
 
