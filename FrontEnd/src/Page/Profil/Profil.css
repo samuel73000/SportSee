@@ -1,14 +1,14 @@
-.section-page-profil{
+.section-page-profil {
   margin-top: 9vh;
   margin-left: 11vw;
 }
-.container-allconposant-Profil{
+.container-allconposant-Profil {
   display: flex;
   flex-direction: row;
   width: 100%;
   gap: 5%;
 }
-.container-allCompoantSaufNutri{
+.container-allCompoantSaufNutri {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -42,8 +42,6 @@
   text-align: left;
 }
 
-
-
 /* container barChart */
 .container-BarChart-Profil {
   width: 100%;
@@ -71,40 +69,33 @@
 
 
 
+@media screen and (max-width: 1025px) {
+  .section-page-profil {
+    margin-top: 9vh;
+    margin-left: 15vw;
+    margin-right: 3vw;
+  }
+  .container-allconposant-Profil {
+    display: flex;
+    flex-direction: column ;
+    gap: 5%;
+  }
+ 
+  /* container barChart */
+  .container-BarChart-Profil {
+    margin-top: 5vh;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 1025px)  {
-
-
-
-
+  /* container-composant-stats-Perf */
+  .container-composant-stats-Perf {
+    gap: 5%;
+    margin-top: 3vh;
+  }
+  /* NutritionStats */
+  .container-NutritionStats-profil {
+    flex-direction: row;
+    gap: 3vw;
+    margin-right: 0vw;
+    margin-top: 2vh;
+  }
 }

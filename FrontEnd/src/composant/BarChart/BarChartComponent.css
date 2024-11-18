@@ -23,7 +23,9 @@
 .container-title-barChart {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-left: 32px;
+  margin-right: 1vw;
 }
 .title-barChart {
   font-family: Roboto;
@@ -32,14 +34,14 @@
   line-height: 24px;
   text-align: left;
   color: #20253a;
-  margin-right: 58%;
   margin-left: 2%;
 }
 .legend-item {
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin-left: 10px;
+  /* gap: 5%; */
+  /* width: 20%; */
 }
 
 .legend-color {
@@ -47,4 +49,7 @@
   height: 15px;
   margin-right: 5px;
   border-radius: 25px;
+}
+.legend-texte{
+margin-right: 2vw;
 }

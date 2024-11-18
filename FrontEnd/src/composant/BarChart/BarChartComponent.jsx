@@ -38,13 +38,11 @@ export default function BarChartComponent(props) {
           <span
             className='legend-color'
             style={{ backgroundColor: "#282D30" }}></span>
-          <span>Poids (kg)</span>
-        </span>
-        <span className='legend-item'>
+          <span className="legend-texte">Poids (kg)</span>
           <span
             className='legend-color'
             style={{ backgroundColor: "#E60000" }}></span>
-          <span>Calories</span>
+          <span className="legend-texte">Calories</span>
         </span>
       </div>
       <ResponsiveContainer width='100%' height='100%'>
