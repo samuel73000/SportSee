@@ -18,8 +18,13 @@
   height: 50px;
   border-radius: 25px;
   cursor: pointer;
-  border-color: red;
+  border: solid 3px red;
   font-size: 20px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: black;
+  text-decoration: none;
 }
 .btn-home:hover {
   background-color: red;

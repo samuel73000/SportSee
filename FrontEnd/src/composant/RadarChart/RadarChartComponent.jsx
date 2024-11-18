@@ -6,7 +6,7 @@ export default function RadarChartPerf(props) {
   return (
     <div className='container-RadarChart'>
       <ResponsiveContainer width="100%" height='100%'>
-        <RadarChart outerRadius="65%" data={props.data}>
+        <RadarChart outerRadius="55%" data={props.data}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis 
             dataKey='kind' 
