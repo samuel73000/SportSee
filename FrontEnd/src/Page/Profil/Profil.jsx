@@ -15,8 +15,8 @@ import LineChart from "../../composant/LineChart/LineChartComponent";
 import BarChart from "../../composant/BarChart/BarChartComponent";
 export default function Profil() {
   const { id } = useParams(); // Récupère le paramètre `id` de l'URL
-  console.log(id);
 
+  // on fait les call api 
   const { data: userData, error: userError } = useFetchData(" ", id);
 
   const { data: activitéData, error: activitéError } = useFetchData(
@@ -30,7 +30,7 @@ export default function Profil() {
     "/performance",
     id
   );
-
+// on gere les erreurs 
   if (userError || activitéError || sessionDurationError || performanceError) {
     return <p>Erreur lors du chargement des données</p>;
   }

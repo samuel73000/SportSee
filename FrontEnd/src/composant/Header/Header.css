@@ -1,3 +1,4 @@
+
 .header-top {
   position: absolute;
   top: 0;
@@ -26,19 +27,23 @@
   text-decoration: none;
 }
 
+
+
 .header-left {
   background-color: #020203;
-  height: 94vh;
+  height: 92.5vh;
+  min-height: 948px;
   width: 117px;
   position: absolute;
-  bottom: 0;
+  top: 91px;
   left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content:center;
-
 }
+
+
 .logo-header-left {
   width: 64px;
   height: 316px;
@@ -54,7 +59,11 @@
   rotate: 270deg;
   position: absolute;
   bottom: 9%;
-}
+} 
+
+
+
+
 @media screen and (max-width: 1025px)  {
   .logo-header {
     width: 158px;

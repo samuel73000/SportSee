@@ -3,7 +3,6 @@ import logo from "../../assets/logo.png"
 import nav from '../../assets/nav.png'
 import { Link , useLocation } from "react-router-dom";
 import React, { useEffect } from "react";
-
 export default function Header() {
   const location = useLocation();
   useEffect(() => {
@@ -14,7 +13,7 @@ export default function Header() {
 
     if (location.pathname === "/") {
       link[0].style.color = "red";
-    } else if (location.pathname === "/Profil") {
+    } else if (/^\/Profil\/\d+$/.test(location.pathname))  {
       link[1].style.color = "red"; 
     }
     
@@ -34,6 +33,8 @@ export default function Header() {
         <img src={nav} alt="nav" className="logo-header-left" />
         <p className="p-header-left">Copiryght, SportSee 2020</p>
       </div>
+      
+    
     </header>
   );
 }
