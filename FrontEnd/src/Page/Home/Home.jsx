@@ -1,33 +1,20 @@
 import "./Home.css";
-import { useState } from "react";
+import { Link } from 'react-router-dom';
 
-export let sharedUserID;
 
 export default function Home() {
-  const [userID, setUserID] = useState(sharedUserID);
-  const [texte, setTexte] = useState("");
-
-  function ChangeUserIdKarl() {
-    setUserID(12);
-    sharedUserID = 12;
-    setTexte ("Les données de Karl sont chargées")
-  }
-  function ChangeUserIdCecilia() {
-    setUserID(18);
-    sharedUserID = 18;
-    setTexte("Les données de Cecilia sont chargées")
-  }
+const Karl = 12;
+const Cecilia = 18;
 
   return (
     <section className='section-home'>
-      <p className="p-home">{texte}</p>
       <div className="container-btn-home">
-      <button className='btn-home' onClick={ChangeUserIdKarl}>
+      <Link to={`Profil/${Karl}`} className='btn-home'>
         Karl
-      </button>
-      <button className='btn-home' onClick={ChangeUserIdCecilia}>
+      </Link>
+      <Link to={`Profil/${Cecilia}`} className='btn-home'>
         Cecilia
-      </button>
+      </Link>
       </div>
     </section>
   );
