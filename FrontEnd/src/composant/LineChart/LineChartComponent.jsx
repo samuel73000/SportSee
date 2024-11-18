@@ -12,16 +12,19 @@ import {
 
 export default function LineChartPerf(props) {
   // Composant pour le tooltip personnalisé
-  const CustomTooltip = ({ active, payload, coordinate }) => {
-    if (active && payload && payload.length) {
-      const { x } = coordinate;
 
+  const CustomTooltip = ({ active, payload, coordinate }) => {
+    if (active && payload && payload.length && coordinate) {
+      const { x } = coordinate; // Récupère la position x du tooltip
       // Logique pour ajuster la position :
       // Appliquer un décalage différent si le point est à droite du graphique.
       let tooltipPosition = {};
-      if (x < 50) {
-        tooltipPosition = { transform: "translateX(-41%)" }; // Côté gauche
-      } else if (x > 290) {
+      const viewportWidth = window.innerWidth; // Récupère la largeur de la fenêtre
+
+      // Applique un décalage en fonction de la position x relative à la taille de l'écran
+      if (x < viewportWidth * 0.1) {
+        tooltipPosition = { transform: "translateX(-50%)" }; // Côté gauche
+      } else if (x > viewportWidth * 0.19) {
         tooltipPosition = { transform: "translateX(41%)" }; // Côté droit
       } else {
         tooltipPosition = { transform: "translateX(-60%)" }; // Centre
