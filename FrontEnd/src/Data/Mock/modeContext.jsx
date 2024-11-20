@@ -22,7 +22,6 @@ export const ModeProvider = ({ children }) => {
     // aux composants enfants qui consomment ce contexte.
     <ModeContext.Provider value={{ useMock, setUseMock, userId, setUserId }}>
       {children}{" "}
-      {/* Ce qui est passé comme enfants à ce composant sera rendu ici */}
     </ModeContext.Provider>
   );
 };
