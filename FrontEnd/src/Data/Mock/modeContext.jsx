@@ -4,7 +4,6 @@ import { createContext, useState, useContext } from "react";
 const ModeContext = createContext();
 
 // Création d'un hook personnalisé "useMode" qui permet d'accéder facilement aux valeurs du contexte "ModeContext"
-// Il est plus pratique d'utiliser ce hook plutôt que de directement utiliser "useContext(ModeContext)" partout dans le code
 export const useMode = () => {
   return useContext(ModeContext); // Utilise "useContext" pour récupérer les valeurs du contexte
 };
