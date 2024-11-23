@@ -5,7 +5,7 @@ const ModeContext = createContext();
 
 // Création d'un hook personnalisé "useMode" qui permet d'accéder facilement aux valeurs du contexte "ModeContext"
 export const useMode = () => {
-  return useContext(ModeContext); // Utilise "useContext" pour récupérer les valeurs du contexte
+  return useContext(ModeContext); 
 };
 
 // Le composant "ModeProvider" est un fournisseur de contexte qui permet aux composants enfants d'accéder à l'état du contexte
