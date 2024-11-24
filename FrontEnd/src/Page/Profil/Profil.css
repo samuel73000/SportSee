@@ -65,7 +65,12 @@
   margin-top: 18.8vh;
 }
 
-
+/* gestion error */
+.error-profil{
+position: absolute;
+top: 50%;
+left: 40%;
+}
 
 
 
