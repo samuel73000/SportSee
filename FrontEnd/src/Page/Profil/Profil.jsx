@@ -1,6 +1,5 @@
 // Profil.jsx
 import "./Profil.css";
-import NutritionStats from "../../composant/NutritionStats/NutritionStatsComponent";
 import caloriesImg from "../../assets/calories-icon.png";
 import proteinesImg from "../../assets/protein-icon.png";
 import glucidesImg from "../../assets/carbs-icon.png";
@@ -9,10 +8,11 @@ import useFetchData from "../../Data/Api";
 import { useParams } from "react-router-dom";
 
 // composant
-import RadialBarChart from "../../composant/RadialBarChart/RadialBarChartComponent";
-import RadarChart from "../../composant/RadarChart/RadarChartComponent";
-import LineChart from "../../composant/LineChart/LineChartComponent";
-import BarChart from "../../composant/BarChart/BarChartComponent";
+import NutritionStats from "../../Components/NutritionStats/NutritionStatsComponent";
+import RadialBarChart from "../../Components/RadialBarChart/RadialBarChartComponent";
+import RadarChart from "../../Components/RadarChart/RadarChartComponent";
+import LineChart from "../../Components/LineChart/LineChartComponent";
+import BarChart from "../../Components/BarChart/BarChartComponent";
 export default function Profil() {
   const { id } = useParams(); // Récupère le paramètre `id` de l'URL
   const useMock = false; //Passer des données API aux données mockées
