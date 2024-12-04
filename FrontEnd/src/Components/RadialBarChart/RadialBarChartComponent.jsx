@@ -46,6 +46,7 @@ export default function RadialBarChart({ value }) {
           fontSize='22'
           fill='black'
           fontFamily='Roboto, sans-serif' 
+          style={{ fontSize: '17px' }}
           >
           {Math.round(progress * 100)}%
         </text>

@@ -32,8 +32,8 @@
 
  .custom-tooltip-lineChart {
   height: 283px;
-  /* width: 0px; */
-  /* max-width: 100vw; */
+  width: 0px;
+  max-width: 100vw;
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
   padding: 8px;
