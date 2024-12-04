@@ -13,7 +13,7 @@ export default function RadialBarChart({ value }) {
       <p className='titre-radialBarChart'>Score</p>
       <ResponsiveContainer width="100%" height="100%">
 
-      <svg viewBox='0 0 120 120'>
+      <svg viewBox='0 -10 120 130'>
         {/* Cercle de fond */}
       
         <circle
@@ -58,11 +58,11 @@ export default function RadialBarChart({ value }) {
           fill='#74798C'
           fontFamily='Roboto, sans-serif' 
           >
-          <tspan x='60' dy='0.5rem'>
+          <tspan x='60' dy='0.1rem' style={{ fontSize: '12px' }}>
             de votre
           </tspan>{" "}
           {/* Première ligne, pas de décalage */}
-          <tspan x='60' dy='1em'>
+          <tspan x='60' dy='1em' style={{ fontSize: '12px' }}>
             objectif
           </tspan>{" "}
           {/* Deuxième ligne, ajusté pour un espacement adéquat */}

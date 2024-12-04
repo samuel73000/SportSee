@@ -42,15 +42,15 @@ export default function BarChartComponent(props) {
           <span
             className='legend-color'
             style={{ backgroundColor: "#E60000" }}></span>
-          <span className="legend-texte">Calories</span>
+          <span className="legend-texte">Calories (Kcal)</span>
         </span>
       </div>
       <ResponsiveContainer width='100%' height='100%'>
         <BarChart
           data={props.data}
           margin={{ top: 20, right: 40, left: 53, bottom: 5 }}
-          barSize={7} // Réduction supplémentaire de la taille des barres
-          barGap={7}  // Ajout d'un écart entre les barres individuelles
+          barSize={9} 
+          barGap={7} 
           >
           <CartesianGrid
             vertical={false}
@@ -58,7 +58,7 @@ export default function BarChartComponent(props) {
             strokeDasharray='3 3'
           />
           <XAxis dataKey='day' tickFormatter={formatDate} tickLine={false} />
-          <YAxis orientation='right' tickLine={false} axisLine={false} />
+          <YAxis orientation='right' tickLine={false} axisLine={false}  />
           <Tooltip content={<CustomTooltip />} />
           <Bar dataKey='kilogram' fill='#282D30' radius={[30, 30, 0, 0]}  />
           <Bar dataKey='calories' fill='#E60000' radius={[30, 30, 0, 0]} />
